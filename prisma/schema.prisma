@@ -1,0 +1,208 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Department {
+  id        Int       @id @default(autoincrement())
+  code      String    @unique
+  name      String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  dean      Dean?
+  programs  Program[]
+  Head      Head?
+}
+
+model Program {
+  id           Int        @id @default(autoincrement())
+  uniqueId     String     @unique
+  code         String     @unique
+  name         String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  departmentId Int
+  coaches      Coach[]
+  courses      Course[]
+  department   Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+  students     Student[]
+}
+
+model Dean {
+  id           Int        @id @default(autoincrement())
+  username     String     @unique
+  email        String     @unique
+  password     String
+  firstName    String
+  lastName     String
+  deanId       String     @unique
+  contact      String?
+  address      String?
+  role         Role       @default(DEAN)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  departmentId Int        @unique
+  department   Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+}
+
+model Head {
+  id           Int        @id @default(autoincrement())
+  username     String     @unique
+  email        String     @unique
+  password     String
+  firstName    String
+  lastName     String
+  headId       String     @unique
+  contact      String?
+  address      String?
+  role         Role       @default(HEAD)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  departmentId Int        @unique
+  department   Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+}
+
+model Student {
+  id            Int             @id @default(autoincrement())
+  username      String          @unique
+  email         String          @unique
+  password      String
+  firstName     String
+  lastName      String
+  studentId     String          @unique
+  yearLevel     YearLevel       @default(FIRST)
+  contact       String?
+  address       String?
+  role          Role            @default(STUDENT)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  programId     Int
+  acadForms     AcadForm[]
+  assignment    Assignment?
+  program       Program         @relation(fields: [programId], references: [id], onDelete: Cascade)
+  studentCourse StudentCourse[]
+  schoolTermId  Int
+  schoolTerm    SchoolTerm      @relation(fields: [schoolTermId], references: [id])
+}
+
+model Coach {
+  id           Int          @id @default(autoincrement())
+  username     String       @unique
+  email        String       @unique
+  password     String
+  firstName    String
+  lastName     String
+  coachId      String       @unique
+  contact      String?
+  address      String?
+  role         Role         @default(COACH)
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  programId    Int
+  assignments  Assignment[]
+  program      Program      @relation(fields: [programId], references: [id], onDelete: Cascade)
+  schoolTermId Int
+  schoolTerm   SchoolTerm   @relation(fields: [schoolTermId], references: [id])
+}
+
+model Assignment {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  studentId Int      @unique
+  coachId   Int
+  coach     Coach    @relation(fields: [coachId], references: [id], onDelete: Cascade)
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+}
+
+model Curriculum {
+  id          Int      @id @default(autoincrement())
+  rev         Int
+  effectivity String
+  cmoName     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  code        String
+  courses     Course[]
+}
+
+model Course {
+  id             Int             @id @default(autoincrement())
+  subject        String
+  description    String
+  units          Int
+  sem            Int
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  curriculumId   Int
+  programId      Int
+  year           YearLevel
+  curriculum     Curriculum      @relation(fields: [curriculumId], references: [id], onDelete: Cascade)
+  program        Program         @relation(fields: [programId], references: [id], onDelete: Cascade)
+  studentCourses StudentCourse[]
+}
+
+model StudentCourse {
+  id           Int        @id @default(autoincrement())
+  noTake       Int        @default(1)
+  remark       Remark     @default(HOLD)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  studentId    Int
+  courseId     Int?
+  course       Course?    @relation(fields: [courseId], references: [id])
+  student      Student    @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  schoolTermId Int
+  schoolTerm   SchoolTerm @relation(fields: [schoolTermId], references: [id])
+}
+
+model AcadForm {
+  id             Int        @id @default(autoincrement())
+  recommendation String
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+  studentId      Int
+  subjectPlan    Json?
+  student        Student    @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  schoolTermId   Int
+  schoolTerm     SchoolTerm @relation(fields: [schoolTermId], references: [id])
+}
+
+model SchoolTerm {
+  id             Int             @id @default(autoincrement())
+  name           String
+  students       Student[]
+  coaches        Coach[]
+  studentCourses StudentCourse[]
+  acadForms      AcadForm[]
+}
+
+enum Semester {
+  FIRST
+  SECOND
+}
+
+enum Role {
+  STUDENT
+  COACH
+  DEAN
+  HEAD
+}
+
+enum YearLevel {
+  FIRST
+  SECOND
+  THIRD
+  FOURTH
+}
+
+enum Remark {
+  PASSED
+  FAILED
+  IP
+  HOLD
+}

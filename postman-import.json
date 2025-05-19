@@ -1,0 +1,1128 @@
+{
+	"info": {
+		"_postman_id": "b750c65d-6f4f-4e49-8de6-e81af189221b",
+		"name": "Curriculum Advising",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40241855"
+	},
+	"item": [
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "Create department",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"CCS\",\n    \"name\": \"College of Computer Studies\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/departments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all departments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/departments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one department",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/departments/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"departments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update department",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"CCS\",\n    \"name\": \"College of Computer Studies\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/departments/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"departments",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete department",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/departments/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"departments",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Program",
+			"item": [
+				{
+					"name": "Create program",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uniqueId\": \"BSIT\",\n    \"code\": \"BSIT\",\n    \"name\": \"Bachelor of Science in Information Technology\",\n    \"departmentId\": 29\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/programs",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"programs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all programs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/programs",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"programs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one program",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/programs/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"programs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update program",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uniqueId\": \"BSIT\",\n    \"code\": \"BSIT\",\n    \"name\": \"Bachelor of Science in Information Technology\",\n    \"departmentId\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/programs/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"programs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete program",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/programs/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"programs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Curriculum",
+			"item": [
+				{
+					"name": "Create curriculum",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"KT\",\n    \"rev\": 15,\n    \"effectivity\": \"1st Sem 2021\",\n    \"cmoName\": \"1st Sem 2021\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/curriculums",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"curriculums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all curriculums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/curriculums",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"curriculums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one curriculum",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/curriculums/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"curriculums",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update curriculum",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"KT\",\n    \"rev\": 15,\n    \"effectivity\": \"1st Sem 2021\",\n    \"cmoName\": \"1st Sem 2021\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/curriculums/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"curriculums",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete curriculum",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/curriculums/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"curriculums",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Create course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subject\": \"COMP1\",\n    \"description\": \"Computer Programming 1\",\n    \"units\": 3,\n    \"sem\": 1,\n    \"year\": \"FIRST\",\n    \"curriculumId\": 2,\n    \"programId\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/courses",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/courses?filterByCurr=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"courses"
+							],
+							"query": [
+								{
+									"key": "filterByProgram",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "filterByYear",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "filterByCurr",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/courses/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update course",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subject\": \"COMP1\",\n    \"description\": \"Computer Programming 1\",\n    \"units\": 3,\n    \"sem\": 1,\n    \"year\": \"FIRST\",\n    \"curriculumId\": 2,\n    \"programId\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/courses/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/courses/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dean",
+			"item": [
+				{
+					"name": "Create dean",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"batman\",\n    \"email\": \"brucewayne@email.com\",\n    \"password\": \"password\",\n    \"firstName\": \"Bruce\",\n    \"lastName\": \"Wayne\",\n    \"deanId\": \"20-0435\",\n    \"contact\": \"01934827628\",\n    \"address\": \"Gotham City\",\n    \"departmentId\": 29\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/deans",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"deans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all deans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/deans",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"deans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one dean",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/deans/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"deans",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update dean",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"batman\",\n    \"email\": \"brucewayne@email.com\",\n    \"password\": \"password\",\n    \"firstName\": \"Bruce\",\n    \"lastName\": \"Wayne\",\n    \"deanId\": \"20-0435\",\n    \"contact\": \"01934827628\",\n    \"address\": \"Gotham City\",\n    \"departmentId\": 29\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/deans/4",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"deans",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete dean",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/deans/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"deans",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coach",
+			"item": [
+				{
+					"name": "Upload coaches",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/sovanreign/Downloads/coaches.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/coaches/upload",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"coaches",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create coach",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"mrbean\",\n    \"email\": \"mrbean@email.com\",\n    \"password\": \"password\",\n    \"firstName\": \"Rowan\",\n    \"lastName\": \"Atkinson\",\n    \"coachId\": \"20-0195\",\n    \"contact\": \"01933817628\",\n    \"address\": \"London\",\n    \"programId\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/coaches",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"coaches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all coaches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/coaches",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"coaches"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "wil",
+									"disabled": true
+								},
+								{
+									"key": "filterByProgram",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one coach",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/coaches/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"coaches",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update coach",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"willy\",\n    \"email\": \"willsmith@email.com\",\n    \"password\": \"password\",\n    \"firstName\": \"Willy\",\n    \"lastName\": \"Wally\",\n    \"coachId\": \"20-0495\",\n    \"contact\": \"01933827628\",\n    \"address\": \"Legaspi City\",\n    \"programId\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/coaches/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"coaches",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete coach",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/coaches/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"coaches",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Upload students",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/sovanreign/Downloads/philippines_students.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/students/upload",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"students",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"janedoe\",\n    \"email\": \"janedoe@email.com\",\n    \"password\": \"password\",\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Doe\",\n    \"studentId\": \"12-0435\",\n    \"contact\": \"09124827628\",\n    \"address\": \"Naga City\",\n    \"programId\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/students",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/students",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"students"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "jane",
+									"disabled": true
+								},
+								{
+									"key": "filterByYearLevel",
+									"value": "FIRST",
+									"disabled": true
+								},
+								{
+									"key": "filterByProgram",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/students/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"students",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update student",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"John Doe\",\n    \"email\": \"johndoe@email.com\",\n    \"password\": \"password\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"studentId\": \"22-0435\",\n    \"contact\": \"01924827628\",\n    \"address\": \"Triangulo Naga City\",\n    \"programId\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/students/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"students",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/students/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"students",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set('access_token', pm.response.json().access_token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\": \"DEAN\",\n    \"username\": \"admin\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/auth/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assignment",
+			"item": [
+				{
+					"name": "Assign students",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"assignments\": [\n        {\n            \"studentId\": 1,\n            \"coachId\": 1\n        },\n        {\n            \"studentId\": 2,\n            \"coachId\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/assignments/bulk",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"assignments",
+								"bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Re-assign students",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"assignments\": [\n        {\n            \"studentId\": 1,\n            \"coachId\": 2\n        },\n        {\n            \"studentId\": 2,\n            \"coachId\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/assignments/bulk",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"assignments",
+								"bulk"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student Courses",
+			"item": [
+				{
+					"name": "Add course to student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"studentId\": 1,\n    \"courseId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/student-course",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"student-course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update course to student",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"studentId\": 1,\n    \"courseId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/student-course/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"student-course",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete student course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/student-course/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"student-course",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "access_token",
+			"value": ""
+		}
+	]
+}
